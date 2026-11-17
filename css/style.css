@@ -317,6 +317,25 @@ a.contact-card:hover { transform: translateY(-4px); }
 .footer__nav a:hover { color: #fff; }
 .footer__copy { color: rgba(255,255,255,.5); font-size: 14px; }
 
+/* ===================== ALIGNMENT =====================
+   Карточки в одном ряду делят строки сетки (subgrid),
+   поэтому заголовки и тексты стоят на одном уровне. */
+.projects { grid-auto-rows: auto; }
+.project { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; min-height: 0; align-content: start; }
+.project__idx { margin-bottom: 0; padding-bottom: 72px; }
+
+.product { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; min-height: 0; }
+.product__top { align-self: start; }
+.product h3, .product__lead, .product ul { align-self: start; }
+.product__art { margin-top: 0; align-self: end; justify-self: end; }
+
+.contact-card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; min-height: 0; }
+.contact-card small { margin-bottom: 0; padding-bottom: 56px; }
+.contact-card span, .contact-card em { align-self: start; }
+
+.focus { grid-auto-rows: auto; }
+.focus__item { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
+
 /* ===================== REVEAL ===================== */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal.is-visible { opacity: 1; transform: none; }
@@ -373,12 +392,11 @@ a.contact-card:hover { transform: translateY(-4px); }
   .section { padding: 88px 0; }
   .section__head { margin-bottom: 40px; }
   .products { grid-template-columns: 1fr; }
-  .product, .product:nth-child(n) { grid-column: auto; min-height: 420px; padding: 28px; }
+  .product, .product:nth-child(n) { grid-column: auto; padding: 28px; }
   .advantage, .team { padding: 72px 0; width: calc(100% - 40px); }
   .advantage .container, .team .container { padding: 0 24px; }
   .focus { grid-template-columns: 1fr; margin-top: 64px; }
   .contacts { grid-template-columns: 1fr; }
-  .contact-card { min-height: 170px; }
   .requisites dl { grid-template-columns: 1fr 1fr; }
 }
 
@@ -388,7 +406,6 @@ a.contact-card:hover { transform: translateY(-4px); }
   .hero__actions .btn { flex: 1 1 100%; justify-content: center; }
   .float-card--d { display: none; }
   .projects, .services { grid-template-columns: 1fr; }
-  .project { min-height: 0; }
   .project__idx { padding-bottom: 28px; }
   .flow { grid-template-columns: 1fr; }
   .flow__core { display: grid; place-items: center; order: -1; }
