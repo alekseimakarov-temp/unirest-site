@@ -231,7 +231,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .projects { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .projects[hidden] { display: none; }
 .project {
-  border: 1px solid var(--line); border-radius: var(--radius); padding: 32px 28px; min-height: 280px;
+  background: var(--cream); border: 1px solid transparent; border-radius: var(--radius); padding: 32px 28px; min-height: 280px;
   display: flex; flex-direction: column; transition: background .3s, color .3s, transform .3s var(--ease), border-color .3s;
 }
 .project:hover { background: var(--red); color: #fff; border-color: var(--red); transform: translateY(-4px); }
